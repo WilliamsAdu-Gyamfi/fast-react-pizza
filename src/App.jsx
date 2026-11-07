@@ -8,11 +8,14 @@ import Cart from "./features/cart/Cart";
 import CreateOrder from "./features/order/CreateOrder";
 import Order from "./features/order/Order";
 import AppLayout from "./ui/AppLayout";
+import Error from "./ui/Error.jsx";
 
 //router
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
+    errorElement: <Error />,
+
     children: [
       {
         path: "/",
@@ -24,6 +27,7 @@ const router = createBrowserRouter([
         element: <Menu />,
         //connecting the loader component to the route(step 2)
         loader: menuLoader,
+        errorElement: <Error />,
       },
 
       {
