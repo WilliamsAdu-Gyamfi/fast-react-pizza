@@ -21,7 +21,7 @@ function Order() {
     cart,
   } = order;
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
-
+  console.log(id, cart);
   return (
     <div>
       <div>

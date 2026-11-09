@@ -10,6 +10,21 @@ export async function getMenu() {
   return data;
 }
 
+//was debugging my api
+// export async function getMenu() {
+//   console.log("GETMENU FUNCTION IS RUNNING");
+//   const res = await fetch(`${API_URL}/menu`);
+
+//   if (!res.ok) throw Error("Failed getting menu");
+
+//   const response = await res.json();
+
+//   console.log("FULL RESPONSE:", response);
+//   console.log("DATA:", response.data);
+
+//   return response.data;
+// }
+
 export async function getOrder(id) {
   const res = await fetch(`${API_URL}/order/${id}`);
   if (!res.ok) throw Error(`Couldn't find order #${id}`);
