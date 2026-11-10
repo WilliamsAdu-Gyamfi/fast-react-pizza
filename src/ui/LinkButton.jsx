@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 
-function LinkButton({ children, to = { to } }) {
+function LinkButton({ children, to }) {
   return (
-    <Link className="text-sm text-blue-400 hover:text-blue-900 hover:underline">
+    <Link
+      to={to}
+      className="text-sm text-blue-400 hover:text-blue-900 hover:underline"
+    >
       {children}
     </Link>
   );
