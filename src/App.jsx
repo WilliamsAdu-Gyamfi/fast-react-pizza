@@ -11,7 +11,9 @@ import CreateOrder, {
 import Order, { loader as orderLoader } from "./features/order/Order";
 import AppLayout from "./ui/AppLayout";
 import Error from "./ui/Error.jsx";
-
+import { configureStore } from "@reduxjs/toolkit";
+import userReducer from "./features/user/userSlice.js";
+import { Provider } from "react-redux";
 //router
 const router = createBrowserRouter([
   {
@@ -51,6 +53,7 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+
 const App = function () {
   return <RouterProvider router={router} />;
 };
