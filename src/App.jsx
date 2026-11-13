@@ -9,11 +9,13 @@ import CreateOrder, {
   action as CreateOrderAction,
 } from "./features/order/CreateOrder";
 import Order, { loader as orderLoader } from "./features/order/Order";
+import { action as UpdateOrderAction } from "./features/order/UpdateOrder";
+
 import AppLayout from "./ui/AppLayout";
 import Error from "./ui/Error.jsx";
-import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "./features/user/userSlice.js";
-import { Provider } from "react-redux";
+// import { configureStore } from "@reduxjs/toolkit";
+// import userReducer from "./features/user/userSlice.js";
+// import { Provider } from "react-redux";
 //router
 const router = createBrowserRouter([
   {
@@ -49,6 +51,8 @@ const router = createBrowserRouter([
         path: "/order/:orderId",
         element: <Order />,
         loader: orderLoader,
+        errorElement: <Error />,
+        action: UpdateOrderAction,
       },
     ],
   },
